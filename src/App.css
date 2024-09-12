@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.300)), url(./assets/background.jpg);
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
