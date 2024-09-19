@@ -1,0 +1,97 @@
+.contenedor-main {
+  background-color: #F5F7F8;
+}
+
+.contenedor-bienvenida {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.presentacion {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  gap: 3rem;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+}
+
+.presentacion h2 {
+  font-size: 3rem;
+  color: rgb(5, 5, 5);
+  max-width: 700px;
+}
+
+.presentacion p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  max-width: 700px;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #be0d04;
+}
+
+.imgInicio {
+  max-width: 100%;
+  height: auto;
+  width: 350px;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.imgInicio:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+h2,
+.parrafo-presentacion,
+.imgInicio {
+  animation: fadeIn 2.5s ease-in-out;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container-flecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flecha {
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+  animation: salto 1.5s ease-in-out infinite;
+}
+
+@keyframes salto {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

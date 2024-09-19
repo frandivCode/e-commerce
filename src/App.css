@@ -12,10 +12,15 @@ li {
 
 html,
 body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.contenedor-principal {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.300)), url(./assets/background.jpg);
-  background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-attachment: fixed;
 }
