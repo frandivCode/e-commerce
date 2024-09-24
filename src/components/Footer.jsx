@@ -15,6 +15,7 @@ export default function Footer() {
         <p>Todos los derechos reservados.</p>
       </div>
       <div className='skew'></div>
+      <div className='skew-dos'></div>
     </footer>
   );
 }
