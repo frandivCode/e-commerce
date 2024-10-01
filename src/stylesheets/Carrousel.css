@@ -1,0 +1,33 @@
+.slider {
+  margin: 100px auto;
+  width: 70vw;
+  min-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-track {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 15s linear infinite;
+}
+
+.slider-track img {
+  width: 150px;
+  margin: 0 15px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -1,19 +1,26 @@
 import CartWidget from './CartWidget';
-import logo from '../assets/logo.png';
 import '../stylesheets/NavBar.css';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
     <header className='header-container'>
-      <img className='logo' src={logo} alt="Logo" />
-      <nav className='navbar'>
-        <ul className='container-links'>
-          <li><a href="#about">Sobre nosotros</a></li>
-          <li><a href="#contact">Contacto</a></li>
-          <li><a href="#combos">Combos</a></li>
+      <Link to={'/'} className='logo'>Altos Tragos</Link>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="category/bebidas">Bebidas</Link>
+          </li>
+          <li>
+            <Link to="category/cocteleria">Cocteleria</Link>
+          </li>
         </ul>
       </nav>
       <CartWidget />
     </header>
   );
 }
+

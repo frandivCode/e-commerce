@@ -14,12 +14,9 @@ html,
 body {
   height: 100%;
   scroll-behavior: smooth;
+  background-color: #F5F7F8;
 }
 
 .contenedor-principal {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.300)), url(./assets/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
 }

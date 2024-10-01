@@ -1,20 +1,35 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+/* Vistas */
+import CocteleriaView from './views/CocteleriaView/CocteleriaView';
+import BebidasView from './views/BebidasView/BebidasView';
+import ItemDetailContainer from './views/ItemDetailContainerView/ItemDetailContainer';
+import Home from './views/HomeView/Home';
+
+/* Componentes */
 import Navbar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import TextSlider from './components/TextSlider';
+import Carrousel from './components/Carrousel';
 
 function App() {
   return (
     <div className='App'>
-      <div className='contenedor-principal'>
+      <BrowserRouter>
         <Navbar />
-        <ItemListContainer
-          greeting='¡El arte del buen beber te espera en Altos Tragos!'
-        />
-      </div>
-      <MainContent />
-      <Footer />
+        <div className='contenedor-principal'>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/category/bebidas" element={<BebidasView />} />
+            <Route exact path="/category/cocteleria" element={<CocteleriaView />} />
+            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          </Routes>
+        </div>
+        <Carrousel />
+        <TextSlider />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

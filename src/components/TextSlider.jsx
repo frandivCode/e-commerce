@@ -5,8 +5,8 @@ const TextSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const texts = [
-    'Preparamos los mejores combos para ti.',
-    'Perfectos para cualquier ocasión.',
+    'Accesorios y herramientas para tu bar.',
+    'Bebidas para cualquier tipo de ocasión.',
     '¡Haz de tu evento algo inolvidable con Altos Tragos!'
   ];
 

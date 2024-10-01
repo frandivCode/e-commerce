@@ -5,8 +5,9 @@
 
 .cart-notification {
   color: rgb(0, 0, 0);
-  font-size: 20px;
+  font-size: 16px;
   padding: 0 5px;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
+  font-weight: 600;
 }

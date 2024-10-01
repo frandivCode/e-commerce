@@ -1,17 +1,14 @@
 .container-greeting {
   display: flex;
-  min-height: 400px;
-  justify-content: left;
-  align-items: center;
-  text-align: left;
-  margin-left: 50px;
+  flex-direction: column;
+  margin: 3rem 0;
+  justify-content: center;
+  align-items: start;
 }
 
 .container-greeting h1 {
   font-size: 3rem;
-  max-width: 700px;
-  color: #f5f5f5;
+  margin-left: 2rem;
+  color: #433878;
   font-family: "Poppins", sans-serif;
-  opacity: 0.9;
-  filter: drop-shadow(3px 1px 40px #ffffff);
 }
