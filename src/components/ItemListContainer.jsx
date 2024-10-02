@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getCategory, getProducts } from '../asyncMock.js';
+import ProductCard from './ProductCard.jsx';
 import '../stylesheets/ProductCard.css';
 import '../stylesheets/Cards.css';
 
@@ -45,19 +46,7 @@ function ItemListContainer({ categoria, titulo }) {
                 <div className='contenedor-cards'>
                     {productos.length > 0 ? (
                         productos.map((producto) => (
-                            <div key={producto.id}>
-                                <div className='card'>
-                                    <img src={producto.img} alt={producto.nombre} />
-                                    <div className='description-card'>
-                                        <h3>{producto.nombre}</h3>
-                                        <p className='parrafo-desc'><span>Tipo:</span> {producto.tipo}</p>
-                                    </div>
-                                    <div className='buy-product'>
-                                        <span>${producto.precio.toLocaleString()}</span>
-                                        <button className='btn-buy'>Detalles</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <ProductCard key={producto.id} producto={producto} />
                         ))
                     ) : (
                         <p>No hay productos disponibles en esta categoría.</p>

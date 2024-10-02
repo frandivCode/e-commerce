@@ -1,10 +1,11 @@
 import '../stylesheets/ProductCard.css';
 import { Link } from 'react-router-dom';
 
-export default function ProductCard({ img, nombre, tipo, precio, ...rest }) {
+export default function ProductCard({ producto }) {
+    const { img, nombre, tipo, precio } = producto;
     return (
         <>
-            <div className="card" {...rest}>
+            <div className="card">
                 <img src={img} alt={nombre} />
                 <div className='description-card'>
                     <h3>{nombre}</h3>
@@ -12,9 +13,7 @@ export default function ProductCard({ img, nombre, tipo, precio, ...rest }) {
                 </div>
                 <div className='buy-product'>
                     <span>${precio.toLocaleString()}</span>
-                    <Link to={`/product/${id}`} className='btn-buy'>
-                        Detalles
-                    </Link>
+                    <Link className='btn-buy' to={`/item/${producto.id}`}>Detalles</Link>
                 </div>
             </div>
         </>

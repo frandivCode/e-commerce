@@ -71,7 +71,6 @@
 }
 
 .btn-buy {
-    width: 70px;
     height: auto;
     border: 2px solid #181C14;
     cursor: pointer;
@@ -81,10 +80,12 @@
     padding: 5px;
     font-size: 15px;
     font-weight: 600;
+    color: rgb(0, 0, 0);
+    letter-spacing: .5px;
 }
 
 .btn-buy:hover {
-    background-color: #3C3D37;
+    background-color: #474747;
     color: #ffffff;
 }
 
@@ -118,11 +119,11 @@
     flex-direction: column;
     margin: 3rem 0;
     justify-content: center;
-    align-items: start
+    align-items: flex-start;
 }
 
 .title-categoria h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-left: 2rem;
     color: #433878;
     font-family: "Poppins", sans-serif;
