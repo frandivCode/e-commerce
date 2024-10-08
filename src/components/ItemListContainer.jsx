@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getCategory, getProducts } from '../asyncMock.js';
 import ProductCard from './ProductCard.jsx';
 import '../stylesheets/ProductCard.css';
 import '../stylesheets/Cards.css';
 
-function ItemListContainer({ categoria, titulo }) {
+
+function ItemListContainer() {
+    const { id } = useParams();
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const titulo = id === "bebidas" ? "Bebidas" : id === "cocteleria" ? "Accesorios para tu bar" : "Productos";
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 let productosFiltrados;
 
-                if (categoria) {
-                    productosFiltrados = await getCategory(categoria);
+                if (id) {
+                    productosFiltrados = await getCategory(id);
                 } else {
                     productosFiltrados = await getProducts();
                 }
@@ -28,7 +33,8 @@ function ItemListContainer({ categoria, titulo }) {
         };
 
         fetchProducts();
-    }, [categoria]);
+    }, [id]);
+
 
     return (
         <>

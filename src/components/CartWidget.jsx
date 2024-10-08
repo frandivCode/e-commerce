@@ -1,6 +1,6 @@
 import '../stylesheets/CartWidget.css';
 
-const CartWidget = () => {
+export default function CartWidget() {
   const cartItemCount = 0;
 
   return (
@@ -10,5 +10,3 @@ const CartWidget = () => {
     </div>
   );
 };
-
-export default CartWidget;

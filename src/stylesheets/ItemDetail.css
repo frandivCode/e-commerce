@@ -32,13 +32,11 @@
     font-weight: bold;
     letter-spacing: 0;
     text-transform: uppercase;
-
 }
 
 .precio-product {
-    font-size: 30px;
-    font-weight: 500;
-    border-bottom: 2px solid black;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .descripcion-product p {
@@ -64,6 +62,7 @@
     border: 1px solid rgb(179, 179, 179);
     width: 150px;
     padding: 8px 20px;
+    border-radius: 5px;
 }
 
 .contador-product span {
