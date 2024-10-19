@@ -1,12 +1,18 @@
 import '../stylesheets/CartWidget.css';
+import { NavLink } from "react-router-dom";
+import { CartContext } from '../context/CartContext';
+import { useContext } from 'react';
 
 export default function CartWidget() {
-  const cartItemCount = 0;
+
+  const { cantidadEnCarrito } = useContext(CartContext);
 
   return (
-    <div className='cart-widget'>
-      <ion-icon name="cart-outline"></ion-icon>
-      <span className='cart-notification'>{cartItemCount}</span>
-    </div>
+    <NavLink to={"/cart"}>
+      <div className='cart-widget'>
+        <ion-icon name="cart-outline"></ion-icon>
+        <span className='cart-notification'>{cantidadEnCarrito()}</span>
+      </div>
+    </NavLink>
   );
 };

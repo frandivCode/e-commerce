@@ -11,10 +11,11 @@
 }
 
 .left-img img {
-    width: auto;
+    width: 370px;
     object-fit: contain;
-
     height: 400px;
+    border: 1px solid #d6d6d6;
+    background-color: #f0f0f0;
 }
 
 .contenedor-product {

@@ -133,17 +133,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 65vh;
+    min-height: 100vh;
     width: 100%;
 }
 
-svg {
+.loader {
     width: 4.25em;
     transform-origin: center;
     animation: rotate4 2s linear infinite;
 }
 
-circle {
+.loader circle {
     fill: none;
     stroke: hsl(214, 97%, 59%);
     stroke-width: 2;

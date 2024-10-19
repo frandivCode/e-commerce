@@ -1,7 +1,7 @@
 import ItemListContainer from '../../components/ItemListContainer';
 
 function Home() {
-    return <ItemListContainer titulo='Todos los productos' />;
+    return <ItemListContainer />;
 }
 
 export default Home;

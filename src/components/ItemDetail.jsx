@@ -1,15 +1,50 @@
-import { useState } from 'react';
 import '../stylesheets/ItemDetail.css';
+import ItemCount from './ItemCount';
+import { CartContext } from "../context/CartContext";
+import { useState, useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../stylesheets/Toastify.css';
 
-function ItemDetail({ product }) {
 
-    const [cantidadProduct, setCantidadProduct] = useState(1);
+function ItemDetail({ product, initialCount = 1 }) {
+    const { agregarAlCarrito, stock, actualizarStock } = useContext(CartContext);
+    const [cantidad, setCantidad] = useState(initialCount);
 
-    const incrementarCantidad = () => setCantidadProduct(cantidadProduct + 1);
-    const decrementarCantidad = () => {
-        if (cantidadProduct > 1) {
-            setCantidadProduct(cantidadProduct - 1);
+    const stockDisponible = stock[product.id] !== undefined ? stock[product.id] : product.stock;
+
+    const handleRestar = () => {
+        if (cantidad > 1) {
+            setCantidad(cantidad - 1);
         }
+    };
+
+    const handleSumar = () => {
+        if (cantidad < stockDisponible) {
+            setCantidad(cantidad + 1);
+        }
+    };
+
+    const handleAgregar = () => {
+        if (cantidad <= stockDisponible) {
+            agregarAlCarrito(product, cantidad);
+            itemAgregado();
+            setCantidad(1);
+
+            actualizarStock(product.id, stockDisponible - cantidad);
+        }
+    };
+
+    const itemAgregado = () => {
+        toast.success('¡Producto agregado con éxito al carrito!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     };
 
     return (
@@ -22,21 +57,24 @@ function ItemDetail({ product }) {
                     <h3>{product.nombre}</h3>
                     <span className='precio-product'>${product.precio.toLocaleString()}</span>
                     <p><span className='description-text'>Descripción:</span> {product.descripcion}</p>
+                    <p className='stock'>Stock Disponible: {stockDisponible}</p>
                 </div>
-                <div className='contenedor-compra'>
-                    <div className='contador-product'>
-                        <button onClick={decrementarCantidad} className='btn-contador-resta'>-</button>
-                        <span>{cantidadProduct}</span>
-                        <button onClick={incrementarCantidad} className='btn-contador-suma'>+</button>
-                    </div>
-                    <button className="add-carrito">
-                        <ion-icon name="cart-outline"></ion-icon>
-                        <p className="text-buy">Comprar</p>
-                    </button>
-                </div>
+                <ItemCount
+                    cantidad={cantidad}
+                    handleSumar={handleSumar}
+                    handleRestar={handleRestar}
+                    handleAgregar={handleAgregar}
+                    disabled={stockDisponible === 0}
+                />
+                <ToastContainer
+                    toastClassName="mi-toast-container"
+                    bodyClassName="mi-toast-body"
+                    progressClassName="mi-toast-progress"
+                />
             </div>
         </div>
     );
+
 }
 
 export default ItemDetail;
