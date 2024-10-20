@@ -5,6 +5,7 @@ import ImgCarrito from '../assets/img/shopping-cart.png';
 import '../stylesheets/Carrito.css';
 
 const Carrito = () => {
+
     const { carrito, precioTotal, vaciarCarrito, removeItem } = useContext(CartContext);
 
     const handleVaciar = () => {
@@ -49,7 +50,7 @@ const Carrito = () => {
                                     <td>
                                         <ion-icon
                                             name="close-outline"
-                                            onClick={() => handleClickRemoveId(prod)} // Pasamos el producto al hacer clic
+                                            onClick={() => handleClickRemoveId(prod)}
                                         ></ion-icon>
                                     </td>
                                 </tr>
@@ -59,6 +60,11 @@ const Carrito = () => {
                     <div className="container-vaciarCart">
                         <h2>Total a pagar: $ {precioTotal().toLocaleString()}</h2>
                         <button className="button-vaciar" onClick={handleVaciar}>Vaciar</button>
+                    </div>
+                    <div className="center-btn">
+                        <Link to={"/info"}>
+                            <button className="terminar-compra-cart">Terminar mi compra</button>
+                        </Link>
                     </div>
                 </>
             ) : (

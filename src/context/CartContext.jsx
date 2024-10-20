@@ -5,7 +5,34 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
     const [stock, setStock] = useState({});
+    const [order, setOrder] = useState(null);
 
+    const crearOrden = (buyer) => {
+        const db = getFirestore();
+        const ordersCollection = collection(db, 'orders');
+
+        const items = carrito.map(item => ({
+            id: item.id,
+            nombre: item.nombre,
+            cantidad: item.cantidad,
+            precio: item.precio,
+            categoria: item.categoria
+        }));
+
+        const order = {
+            buyer,
+            items,
+            total: precioTotal(),
+            date: new Date(),
+        };
+
+        return addDoc(ordersCollection, order).then((snapshot) => {
+            const newOrder = { id: snapshot.id, ...order };
+            setOrder(newOrder);
+            vaciarCarrito();
+            return newOrder;
+        });
+    };
     const actualizarStock = (productId, nuevoStock) => {
         setStock((prevStock) => ({
             ...prevStock,

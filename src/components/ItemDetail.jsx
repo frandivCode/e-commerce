@@ -36,7 +36,8 @@ function ItemDetail({ product, initialCount = 1 }) {
     };
 
     const itemAgregado = () => {
-        toast.success('¡Producto agregado con éxito al carrito!', {
+        const textoUnidad = cantidad === 1 ? 'unidad' : 'unidades';
+        toast.success(`¡Se agrego ${cantidad} ${textoUnidad} de ${product.nombre} al carrito!`, {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -46,6 +47,7 @@ function ItemDetail({ product, initialCount = 1 }) {
             progress: undefined,
         });
     };
+
 
     return (
         <div className="contenedor-detalles">
