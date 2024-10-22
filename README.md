@@ -124,5 +124,5 @@ O link para desplegar la Web:
 
 <br>
 
-<h3>¡Gracias por ver :fa-heart-o: !</h3>
-<h5> atte frandivCode.</h5>
+<h3>¡Gracias por ver!</h3>
+<h5>atte frandivCode.</h5>
