@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../stylesheets/Mediaqueries.css';
 const ItemCount = ({ cantidad, handleRestar, handleSumar, handleAgregar, disabled }) => {
     return (
         <div className='contenedor-compra'>

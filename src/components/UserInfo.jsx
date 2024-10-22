@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import '../stylesheets/UserInfo.css';
+import '../stylesheets/Mediaqueries.css';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 

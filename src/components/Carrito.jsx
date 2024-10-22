@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import ImgCarrito from '../assets/img/shopping-cart.png';
 import '../stylesheets/Carrito.css';
+import '../stylesheets/Mediaqueries.css';
 
 const Carrito = () => {
-
-    const { carrito, precioTotal, vaciarCarrito, removeItem } = useContext(CartContext);
+    const { carrito, precioTotal, vaciarCarrito, removeItem, agregarAlCarrito } = useContext(CartContext);
 
     const handleVaciar = () => {
         vaciarCarrito();
@@ -14,6 +14,18 @@ const Carrito = () => {
 
     const handleClickRemoveId = (prod) => {
         removeItem(prod);
+    };
+
+    const handleSumar = (prod) => {
+        if (prod.cantidad < prod.stock) {
+            agregarAlCarrito(prod, 1);
+        }
+    };
+
+    const handleRestar = (prod) => {
+        if (prod.cantidad > 1) {
+            agregarAlCarrito(prod, -1);
+        }
     };
 
     return (
@@ -44,7 +56,11 @@ const Carrito = () => {
                                             <h3>{prod.nombre}</h3>
                                         </Link>
                                     </td>
-                                    <td><p>{prod.cantidad}</p></td>
+                                    <td>
+                                        <button className="btn-cantidad" onClick={() => handleRestar(prod)}>-</button>
+                                        <span className="cantidad-count">{prod.cantidad}</span>
+                                        <button className="btn-cantidad" onClick={() => handleSumar(prod)}>+</button>
+                                    </td>
                                     <td>$ {prod.precio.toLocaleString()}</td>
                                     <td>$ {(prod.precio * prod.cantidad).toLocaleString()}</td>
                                     <td>

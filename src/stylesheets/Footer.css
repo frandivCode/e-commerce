@@ -1,7 +1,6 @@
 footer {
   background-color: #2E073F;
-  min-height: 200px;
-  padding: 30px;
+  padding: 15px;
   font-family: "Poppins", sans-serif;
   position: relative;
 }
@@ -56,15 +55,39 @@ footer li a {
   justify-content: space-between;
   align-items: end;
   color: #EEEDEB;
-  height: 150px;
+  height: 120px;
+  font-size: 16px;
 }
 
 .copy p>a {
-  color: #E4B1F0;
-  border-bottom: 1px solid white;
+
+  color: #ee31ee;
   transition: all .40s ease-in-out;
 }
 
 .copy a:hover {
-  color: #FFE1FF;
+  color: #f75bf7;
+}
+
+.create-react {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.create-react ion-icon {
+  font-size: 20px;
+  color: #61DAFB;
+  animation: spin 4s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../stylesheets/TextSlider.css';
+import '../stylesheets/Mediaqueries.css';
 
 const TextSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

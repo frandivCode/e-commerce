@@ -1,6 +1,6 @@
 import React from 'react';
 import '../stylesheets/Carrousel.css';
-
+import '../stylesheets/Mediaqueries.css';
 import logoAbsolut from '../assets/logo-bebidas/absolut.png';
 import logoGin from '../assets/logo-bebidas/gin.png';
 import logoFernet from '../assets/logo-bebidas/fernet.png';

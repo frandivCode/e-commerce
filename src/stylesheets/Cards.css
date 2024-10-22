@@ -10,7 +10,7 @@
 .contenedor-cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 500px);
+  grid-template-columns: repeat(3, 400px);
   justify-content: center;
   align-content: center;
   align-items: center;

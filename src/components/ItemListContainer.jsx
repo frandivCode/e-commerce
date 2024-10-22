@@ -1,5 +1,6 @@
 import '../stylesheets/ProductCard.css';
 import '../stylesheets/Cards.css';
+import '../stylesheets/Mediaqueries.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, query, where, getDocs } from 'firebase/firestore';

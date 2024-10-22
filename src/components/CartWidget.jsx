@@ -1,4 +1,5 @@
 import '../stylesheets/CartWidget.css';
+import '../stylesheets/Mediaqueries.css';
 import { NavLink } from "react-router-dom";
 import { CartContext } from '../context/CartContext';
 import { useContext } from 'react';

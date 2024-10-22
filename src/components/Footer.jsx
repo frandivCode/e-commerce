@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/Footer.css';
+import '../stylesheets/Mediaqueries.css';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -17,8 +18,8 @@ export default function Footer() {
         </li>
       </ul>
       <div className="copy">
-        <p>Creado por <a href="https://github.com/frandivCode">frandivCode</a></p>
-        <p>Todos los derechos reservados.</p>
+        <p>By <a href="https://github.com/frandivCode">frandivCode</a>.</p>
+        <span className='create-react'>Realizado en React<ion-icon name="logo-react"></ion-icon></span>
       </div>
       <div className='skew'></div>
     </footer>

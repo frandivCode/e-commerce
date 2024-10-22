@@ -1,0 +1,42 @@
+/* @media (min-width: 768px) {
+    .contenedor-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .slider {
+        width: 85vw;
+        min-height: 220px;
+    }
+
+    .slider-track img {
+        width: 120px;
+        margin: 0 10px;
+    }
+
+    .title-categoria {
+        align-items: center;
+    }
+
+    .title-categoria h2 {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .card {
+        width: 260px;
+        height: auto;
+    }
+
+    .card img {
+        width: 150px;
+        height: 170px;
+    }
+
+    .slider-text {
+        font-size: 2rem;
+    }
+
+    .skew {
+        top: -241px;
+    }
+} */

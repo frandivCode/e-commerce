@@ -4,8 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { useState, useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../stylesheets/Toastify.css';
-
+import '../stylesheets/Mediaqueries.css';
 
 function ItemDetail({ product, initialCount = 1 }) {
     const { agregarAlCarrito, stock, actualizarStock } = useContext(CartContext);

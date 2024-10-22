@@ -1,5 +1,6 @@
 import CartWidget from './CartWidget';
 import '../stylesheets/NavBar.css';
+import '../stylesheets/Mediaqueries.css';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {

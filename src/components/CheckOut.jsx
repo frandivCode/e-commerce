@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import '../stylesheets/CheckOut.css';
+import '../stylesheets/Mediaqueries.css';
 
 export default function CheckOut() {
     const { order } = useContext(CartContext);
