@@ -117,7 +117,7 @@ vista de todos los productos en el Home ('/'), cada categoría con sus rutas con
 
 * **Clonar el repositorio**: bash git clone https://github.com/frandivCode/e-commerce.git
 * **Instalar las dependencias**: npm install
-* ** Iniciar la aplicación**: npm run dev
+* **Iniciar la aplicación**: npm run dev
 
 O link para desplegar la Web:
 * [Web](https://e-commerce-francode.netlify.app)
