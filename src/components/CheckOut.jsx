@@ -1,42 +1,51 @@
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import '../stylesheets/CheckOut.css';
 
 export default function CheckOut() {
     const { order } = useContext(CartContext);
 
     return (
         <>
-            <h2 style={{ fontFamily: 'monospace' }}>¡GRACIAS POR TU COMPRA!</h2>
             {order ? (
-                <>
-                    <p>ID de la Orden: {order.id}</p>
-                    <h4>Productos comprados:</h4>
-                    <>
-                        {order.items.map((item) => (
-                            <div key={item.id}>
-                                <p><strong>{item.titulo}</strong></p>
-                                <p>Cantidad: {item.quantity}</p>
-                                <p>Precio unitario: ${item.precio}</p>
-                                <p>Subtotal: ${item.precio * item.quantity}</p>
+                <div className="container-compra">
+                    {order.buyer ? (
+                        <h2 className="thank-you-title">¡GRACIAS POR TU COMPRA, {order.buyer.nombre}!</h2>
+                    ) : (
+                        <h2 className="thank-you-title">¡GRACIAS POR TU COMPRA!</h2>
+                    )}
+                    <div className="order-details">
+                        <p className="order-id">ID de la Orden: <span>{order.id}</span></p>
+                        <h4 className="product-title">Productos comprados:</h4>
+                        {order.items.map((product) => (
+                            <div key={product.id} className="product-item">
+                                <p className="product-name">{product.nombre}</p>
+                                <p className="product-quantity"><span className='subrayado'>Cantidad:</span> {product.cantidad}</p>
+                                <p className="product-price"><span className='subrayado'>Precio unitario:</span> <span>${product.precio.toLocaleString()}</span></p>
+                                <p className="product-subtotal"><span className='subrayado'>Precio total:</span> <span>${(product.precio * product.cantidad).toLocaleString()}</span></p>
                             </div>
                         ))}
-                    </>
-                    <h4 style={{ fontFamily: 'monospace', fontWeight: 'bold' }}>PRECIO FINAL: ${order.total}</h4>
-                    <h4>Datos del comprador:</h4>
-                    <p><strong>Nombre Completo:</strong> {order.buyer.nombre}</p>
-                    <p><strong>DNI:</strong> {order.buyer.dni}</p>
-                    <p><strong>Email:</strong> {order.buyer.email}</p>
-                    <p><strong>Dirección:</strong> {order.buyer.direccion}</p>
-                    <p><strong>Localidad:</strong> {order.buyer.localidad}</p>
-                    <p><strong>Código Postal:</strong> {order.buyer.cp}</p>
-                    <p><strong>Fecha de Creación:</strong> {new Date(order.creadoEn).toLocaleString()}</p>
-                </>
+                        <h3 className="final-price">PRECIO FINAL: <span>${order.total.toLocaleString()}</span></h3>
+                        <h4 className="buyer-info-title">Datos del comprador:</h4>
+                        <div className='info-buyer'>
+                            <p className='buyer-info'><span>Nombre Completo:</span> {order.buyer.nombre}</p>
+                            <p className='buyer-info'><span>DNI: </span>{order.buyer.dni}</p>
+                            <p className='buyer-info'><span>Email: </span>{order.buyer.email}</p>
+                            <p className='buyer-info'><span>Dirección:</span> {order.buyer.direccion}</p>
+                            <p className='buyer-info'><span>Localidad: </span>{order.buyer.localidad}</p>
+                            <p className='buyer-info'><span>Código Postal: </span>{order.buyer.cp}</p>
+                        </div>
+                    </div>
+                    <Link to={'/'}><button className='home-link'>Volver al Inicio</button></Link>
+                </div>
             ) : (
-                <p>Cargando la información de la orden...</p>
+                <div className='loading-circle'>
+                    <svg viewBox="25 25 50 50" className='loader'>
+                        <circle r="20" cy="50" cx="50"></circle>
+                    </svg>
+                </div>
             )}
-            <p style={{ color: 'red', fontWeight: 'bold' }}>No válido como factura.</p>
-            <Link to={'/'}>Volver al Home</Link>
         </>
     );
 }

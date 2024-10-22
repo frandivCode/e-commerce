@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
 export const CartContext = createContext();
 
@@ -16,14 +17,12 @@ export const CartProvider = ({ children }) => {
             nombre: item.nombre,
             cantidad: item.cantidad,
             precio: item.precio,
-            categoria: item.categoria
         }));
 
         const order = {
             buyer,
             items,
             total: precioTotal(),
-            date: new Date(),
         };
 
         return addDoc(ordersCollection, order).then((snapshot) => {
@@ -33,6 +32,7 @@ export const CartProvider = ({ children }) => {
             return newOrder;
         });
     };
+
     const actualizarStock = (productId, nuevoStock) => {
         setStock((prevStock) => ({
             ...prevStock,
@@ -89,7 +89,9 @@ export const CartProvider = ({ children }) => {
             vaciarCarrito,
             removeItem,
             stock,
-            actualizarStock
+            actualizarStock,
+            crearOrden,
+            order
         }}>
             {children}
         </CartContext.Provider>

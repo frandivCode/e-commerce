@@ -12,7 +12,7 @@ const UserInfo = () => {
     const [cp, setCP] = useState('');
     const [error, setError] = useState('');
 
-    const { carrito, crearOrden, vaciarCarrito } = useContext(CartContext);
+    const { crearOrden, vaciarCarrito } = useContext(CartContext);
     const navigate = useNavigate();
 
     const handleNombreChange = (e) => {
@@ -32,6 +32,7 @@ const UserInfo = () => {
     const handleSubmit = () => {
         if (!nombre || !dni || !email || !direccion || !localidad || !cp) {
             setError('Todos los campos son obligatorios.');
+            console.log({ nombre, dni, email, direccion, localidad, cp });
             return;
         }
 
@@ -65,7 +66,7 @@ const UserInfo = () => {
     return (
         <div className='container-form'>
             <div className='title-form'>
-                <h2>Completa los siguientes datos para finalizar la compra.<ion-icon name="checkmark-outline"></ion-icon></h2>
+                <h2>Completa los siguientes datos para finalizar tu compra.<ion-icon name="checkmark-outline"></ion-icon></h2>
             </div>
             <div className='formulario'>
                 <form onSubmit={(e) => {

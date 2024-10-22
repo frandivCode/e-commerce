@@ -13,8 +13,8 @@ import TextSlider from './components/TextSlider';
 import Carrousel from './components/Carrousel';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import CheckOut from './components/CheckOut';
 import { CartProvider } from "./context/CartContext";
-// import CheckOut from './components/CheckOut';
 
 function MainContent() {
   const location = useLocation();
@@ -24,15 +24,15 @@ function MainContent() {
       <div className='contenedor-principal'>
         <Routes>
           <Route exact path="/" element={<HomeView />} />
-          <Route exact path="/info" element={<InfoView />} />
+          <Route exact path="/infobuyer" element={<InfoView />} />
           <Route path="/category/:id" element={<ItemListContainer />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/producto/:id" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Carrito />} />
-          {/* <Route exact path="/checkout" element={<CheckOut />} /> */}
+          <Route path="/checkout/:orderId" element={<CheckOut />} />
         </Routes>
       </div>
-      {location.pathname !== '/cart' && location.pathname !== '/info' && (
+      {location.pathname !== '/cart' && location.pathname !== '/infobuyer' && !location.pathname.startsWith('/checkout') && (
         <>
           <Carrousel />
           <TextSlider />
@@ -50,7 +50,6 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <MainContent />
-          {/* <CheckOut /> */}
         </BrowserRouter>
       </CartProvider>
     </div>

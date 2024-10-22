@@ -1,4 +1,4 @@
-import InfoBuyer from '../../components/InfoBuyer';
+import InfoBuyer from '../../components/UserInfo';
 
 export default function InfoView() {
     return (

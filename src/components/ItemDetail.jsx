@@ -39,7 +39,7 @@ function ItemDetail({ product, initialCount = 1 }) {
         const textoUnidad = cantidad === 1 ? 'unidad' : 'unidades';
         toast.success(`¡Se agrego ${cantidad} ${textoUnidad} de ${product.nombre} al carrito!`, {
             position: "top-right",
-            autoClose: 2000,
+            autoClose: 1500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
