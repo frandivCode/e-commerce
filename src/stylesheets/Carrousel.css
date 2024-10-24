@@ -32,14 +32,15 @@
   }
 }
 
-@media (max-width:768px) {
+@media (max-width:425px) {
   .slider {
-    width: 85vw;
+    width: 100%;
     min-height: 220px;
+    margin: 50px auto;
   }
 
   .slider-track img {
-    width: 130px;
+    width: 100px;
     margin: 0 10px;
   }
 }

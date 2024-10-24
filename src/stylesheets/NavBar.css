@@ -62,8 +62,4 @@
   .navbar .navbar-list-links {
     display: none;
   }
-
-  .navbar li:a::after {
-    width: 50%;
-  }
 }

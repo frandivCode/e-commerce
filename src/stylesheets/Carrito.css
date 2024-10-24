@@ -281,6 +281,7 @@ ion-icon[name="close-outline"]:hover {
 }
 
 @media (max-width:768px) {
+
     .content-carrito {
         gap: 5px;
     }
@@ -354,5 +355,49 @@ ion-icon[name="close-outline"]:hover {
         padding-inline: 1rem;
         gap: 5px;
         font-size: 12px;
+    }
+}
+
+@media (max-width:425px) {
+    h1 {
+        font-size: 16px;
+    }
+
+    .img-carrito {
+        height: 18px;
+    }
+
+    .container-carrito {
+        padding: 0;
+    }
+
+    .tabla-content th {
+        font-size: 9px;
+    }
+
+    .tabla-content td img {
+        width: 45px;
+        height: 50px;
+    }
+
+    .tabla-content th:nth-child(2),
+    .tabla-content td:nth-child(2) {
+        width: 10%;
+    }
+
+    .tabla-content td {
+        font-size: 10px;
+    }
+
+    .cantidad-count {
+        font-size: 10px;
+    }
+
+    .btn-cantidad {
+        width: 20px;
+        font-size: 13px;
+        border-radius: 10px;
+        padding: 0 5px;
+        margin: 0 2px;
     }
 }

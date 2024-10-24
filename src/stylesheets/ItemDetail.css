@@ -135,7 +135,6 @@
 }
 
 @media (max-width:768px) {
-
     .descripcion-product h3 {
         font-size: 30px;
     }
@@ -161,7 +160,6 @@
     .contador-product {
         width: 120px;
         padding: 5px;
-        justify-content: space-evenly;
     }
 
     .btn-contador-resta,
@@ -174,15 +172,37 @@
     }
 
     .add-carrito ion-icon {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .add-carrito .text-buy {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .add-carrito {
         padding: 10px;
-        gap: 10px;
+    }
+}
+
+@media (max-width:425px) {
+    .contenedor-detalles {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .descripcion-product {
+        padding: 0 10px;
+    }
+
+    .contenedor-product {
+        align-items: center;
+    }
+
+    .left-img img {
+        width: 200px;
+        height: 220px;
+    }
+
+    .descripcion-product h3 {
+        font-size: 25px;
     }
 }
