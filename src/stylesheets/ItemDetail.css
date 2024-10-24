@@ -11,9 +11,9 @@
 }
 
 .left-img img {
-    width: 370px;
+    width: 350px;
     object-fit: contain;
-    height: 400px;
+    height: 380px;
     border: 1px solid #dddddd;
     background-color: #f3f3f3;
 }
@@ -53,7 +53,9 @@
 .contenedor-compra {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 3rem;
+    margin-top: 4rem;
 }
 
 .contador-product {
@@ -130,4 +132,57 @@
     border-radius: 2px;
     background: linear-gradient(to right, #b817d8, #b300ff, #ff00ea);
     transition: width 0.3s;
+}
+
+@media (max-width:768px) {
+
+    .descripcion-product h3 {
+        font-size: 30px;
+    }
+
+    .precio-product {
+        font-size: 20px;
+    }
+
+    .descripcion-product p {
+        margin-top: 1rem;
+        font-size: 14px;
+    }
+
+    .left-img img {
+        width: 250px;
+        height: 270px;
+    }
+
+    .contenedor-compra {
+        margin-top: 0;
+    }
+
+    .contador-product {
+        width: 120px;
+        padding: 5px;
+        justify-content: space-evenly;
+    }
+
+    .btn-contador-resta,
+    .btn-contador-suma {
+        font-size: 18px;
+    }
+
+    .contador-product span {
+        font-size: 15px;
+    }
+
+    .add-carrito ion-icon {
+        font-size: 1rem;
+    }
+
+    .add-carrito .text-buy {
+        font-size: 13px;
+    }
+
+    .add-carrito {
+        padding: 10px;
+        gap: 10px;
+    }
 }

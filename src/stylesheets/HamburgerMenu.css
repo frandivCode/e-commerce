@@ -1,0 +1,54 @@
+ion-icon[name="menu-outline"] {
+    font-size: 25px;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 200px;
+    height: 88vh;
+    background-color: #4e0f69;
+    color: white;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(-10px);
+}
+
+.menu.open {
+    transform: translateX(0);
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    flex-direction: column;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+
+@media (max-width:768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+}

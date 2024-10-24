@@ -31,3 +31,15 @@
     transform: translateX(-100%);
   }
 }
+
+@media (max-width:768px) {
+  .slider {
+    width: 85vw;
+    min-height: 220px;
+  }
+
+  .slider-track img {
+    width: 130px;
+    margin: 0 10px;
+  }
+}

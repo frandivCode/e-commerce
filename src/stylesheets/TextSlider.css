@@ -24,3 +24,16 @@
 .slider-text.active {
   opacity: 1;
 }
+
+@media (max-width:768px) {
+
+  .text-slider {
+    height: 125px;
+    margin: 0;
+  }
+
+  .slider-text {
+    font-size: 2rem;
+    transform: rotate(6deg);
+  }
+}

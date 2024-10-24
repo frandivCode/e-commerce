@@ -279,3 +279,80 @@ ion-icon[name="close-outline"]:hover {
     justify-content: center;
     margin-top: 1rem;
 }
+
+@media (max-width:768px) {
+    .content-carrito {
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin: 1rem 0;
+    }
+
+    .img-carrito {
+        height: 22px;
+    }
+
+    .container-carrito {
+        padding: 0 5px;
+    }
+
+    .tabla-content th {
+        font-size: 13px;
+    }
+
+    .tabla-content th,
+    .tabla-content td {
+        padding: 5px;
+    }
+
+    .tabla-content td img {
+        width: 70px;
+        height: 60px;
+    }
+
+    .cantidad-count {
+        font-size: 16px;
+    }
+
+    .btn-cantidad {
+        padding: 0px;
+        width: 25px;
+        font-size: 18px;
+    }
+
+    .tabla-content td {
+        font-size: 13px;
+    }
+
+    ion-icon[name="close-outline"] {
+        font-size: 16px;
+    }
+
+    .container-vaciarCart h2 {
+        font-size: 16px;
+    }
+
+    .button-vaciar {
+        width: 100px;
+        padding: 5px 0;
+        font-size: 14px;
+    }
+
+    .terminar-compra-cart {
+        width: 180px;
+        font-size: 14px;
+    }
+
+    .cart-empty h2 {
+        font-size: 14px;
+    }
+
+    .button {
+        padding-block: 0.3rem;
+        padding-inline: 1rem;
+        gap: 5px;
+        font-size: 12px;
+    }
+}
